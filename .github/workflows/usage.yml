@@ -20,4 +20,4 @@ jobs:
       uses: actions/upload-artifact@v1
       with:
         name: my-binaries
-        path: $GITHUB_WORKSPACE/ConsoleApp1/ConsoleApp1/bin
+        path: ConsoleApp1/ConsoleApp1/bin
