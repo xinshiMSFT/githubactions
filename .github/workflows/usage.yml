@@ -19,5 +19,5 @@ jobs:
     - name: Publish binaries
       uses: actions/upload-artifact@v1
       with:
-        name: $GITHUB_WORKSPACE/ConsoleApp1/ConsoleApp1/bin
+        name: my-binaries
         path: $GITHUB_WORKSPACE/ConsoleApp1/ConsoleApp1/bin
