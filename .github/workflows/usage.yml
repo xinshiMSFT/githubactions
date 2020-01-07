@@ -1,0 +1,27 @@
+name: .NET Core
+
+on: [pull_request]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-16.04
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 2.2.108
+    - name: Build with dotnet
+      run: dotnet build ConsoleApp1/ConsoleApp1.sln
+    
+    - uses: ./
+    - name: Hello world action step
+      id: hello
+      uses: actions/hello-world-docker-action@v1
+      with:
+        who-to-greet: 'Mona the Octocat'
+    - name: Get the output time
+      run: echo "The time was ${{ steps.hello.outputs.time }}"
+    
