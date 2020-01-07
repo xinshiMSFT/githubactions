@@ -16,8 +16,12 @@ jobs:
     - name: Build with dotnet
       run: dotnet build ConsoleApp1/ConsoleApp1.sln
     
-    - name: Publish binaries
-      uses: actions/upload-artifact@v1
+    - uses: ./
+    - name: Hello world action step
+      id: hello
+      uses: xinshiMSFT/githubaction@v1
       with:
-        name: my-binaries
-        path: ConsoleApp1/ConsoleApp1/bin
+        who-to-greet: 'Mona the Octocat'
+    - name: Get the output time
+      run: echo "The time was ${{ steps.hello.outputs.time }}"
+    
