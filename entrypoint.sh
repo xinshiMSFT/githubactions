@@ -8,4 +8,4 @@ echo "Run Infer..."
 sudo infer analyzejson --debug --cfg-json cfg.json --tenv-json tenv.json
 sudo chmod -R 777 infer-out/
 
-cat -s $(Build.SourcesDirectory)/infer-out/bugs.txt | sed -E -e '/ANALYSIS_STOP|Bad_footprint|Missing_fld|PRECONDITION_NOT_MET|Assert_failure|CLASS_CAST_EXCEPTION|Abduction_case_not_implemented|Found.[0-9]+.issues|Summary.of.the.report/,/^[[:space:]]*$/d'
+cat -s infer-out/bugs.txt | sed -E -e '/ANALYSIS_STOP|Bad_footprint|Missing_fld|PRECONDITION_NOT_MET|Assert_failure|CLASS_CAST_EXCEPTION|Abduction_case_not_implemented|Found.[0-9]+.issues|Summary.of.the.report/,/^[[:space:]]*$/d'
