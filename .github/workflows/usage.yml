@@ -17,4 +17,9 @@ jobs:
       run: dotnet build ConsoleApp1/ConsoleApp1.sln
     
     - name: Run InferSharp
+      id: infersharp
       uses: ./
+      with:
+        binary-path: 'ConsoleApp1/ConsoleApp1/bin'
+    - name: InferSharp analysis results
+      run: echo "${{ steps.infersharp.outputs.results }}"

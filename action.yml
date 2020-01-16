@@ -1,5 +1,14 @@
 name: 'Run InferSharp'
 description: 'Run InferSharp'
+inputs:
+  binary-path:
+    description: 'The path where the binaries are located'
+    required: true
+outputs:
+  results:
+    description: 'The analysis results'
 runs:
   using: 'docker'
   image: 'Dockerfile'
+  args:
+    - ${{ inputs.binary-path }}
