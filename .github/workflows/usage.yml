@@ -18,7 +18,7 @@ jobs:
     
     - name: Run InferSharp
       id: infersharp
-      uses: ./
+      uses: xinshiMSFT/githubactions@v0.1-alpha
       with:
         binary-path: 'ConsoleApp1/ConsoleApp1/bin'
     - name: InferSharp analysis results
