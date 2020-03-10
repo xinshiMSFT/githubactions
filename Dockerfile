@@ -1,4 +1,4 @@
-FROM alpine:3.10
+FROM xinshi/githubactions:latest
 
 COPY entrypoint.sh /entrypoint.sh
 

@@ -1,15 +1,14 @@
-name: 'Hello World'
-description: 'Greet someone and record the time'
+name: 'Run InferSharp'
+description: 'Run InferSharp'
 inputs:
-  who-to-greet:
-    description: 'Who to greet'
+  binary-path:
+    description: 'The path where the binaries are located'
     required: true
-    default: 'World'
 outputs:
-  time:
-    description: 'The time we greeted you'
+  results:
+    description: 'The analysis results'
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.who-to-greet }}
+    - ${{ inputs.binary-path }}

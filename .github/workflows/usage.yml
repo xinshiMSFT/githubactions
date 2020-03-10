@@ -16,12 +16,10 @@ jobs:
     - name: Build with dotnet
       run: dotnet build ConsoleApp1/ConsoleApp1.sln
     
-    - uses: ./
-    - name: Hello world action step
-      id: hello
-      uses: actions/hello-world-docker-action@v1
+    - name: Run InferSharp
+      id: infersharp
+      uses: ./
       with:
-        who-to-greet: 'Mona the Octocat'
-    - name: Get the output time
-      run: echo "The time was ${{ steps.hello.outputs.time }}"
-    
+        binary-path: 'ConsoleApp1/ConsoleApp1/bin'
+    - name: InferSharp analysis results
+      run: echo "${{ steps.infersharp.outputs.results }}"
