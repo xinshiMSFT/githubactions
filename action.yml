@@ -1,5 +1,5 @@
-name: 'Run InferSharp'
-description: 'Run InferSharp'
+name: 'InfSharp'
+description: 'InfSharp'
 inputs:
   binary-path:
     description: 'The path where the binaries are located'
