@@ -18,12 +18,13 @@ jobs:
     
     - name: Get All Changed Files
       uses: jitterbit/get-changed-files@v1
+      run: echo ::set-output name=changedFiles::${{ steps.files.outputs.all }}
 
     - name: Run InferSharp
       id: infersharp
       uses: ./
       with:
         binary-path: 'ConsoleApp1/ConsoleApp1/bin'
-        pr-changed-files: ${{ steps.files.outputs.all }}
+        pr-changed-files: ${{ changedFiles }}
     - name: InferSharp analysis results
       run: echo "${{ steps.infersharp.outputs.results }}"
