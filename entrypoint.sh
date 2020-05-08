@@ -1,5 +1,6 @@
 #!/bin/sh -l
 
+echo $2
 echo "Run InferSharp translation..."      
 sudo dotnet /app/Cilsil/bin/Debug/netcoreapp2.2/Cilsil.dll translate $1 --outcfg cfg.json --outtenv tenv.json
 sudo infer capture

@@ -21,5 +21,6 @@ jobs:
       uses: ./
       with:
         binary-path: 'ConsoleApp1/ConsoleApp1/bin'
+        pr-changed-files: ${{ steps.files.outputs.all }}
     - name: InferSharp analysis results
       run: echo "${{ steps.infersharp.outputs.results }}"
