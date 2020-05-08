@@ -4,7 +4,7 @@ echo "Binary path"
 echo $1
 echo "List of files"
 echo $2 | sed 's/ /,/g'
-changes=$(("$2" | sed 's/ /,/g'))
+changes=$(($2 | sed 's/ /,/g'))
 echo $changes
 echo "Run InferSharp translation..."      
 sudo dotnet /app/Cilsil/bin/Debug/netcoreapp2.2/Cilsil.dll translate $1 --outcfg cfg.json --outtenv tenv.json
