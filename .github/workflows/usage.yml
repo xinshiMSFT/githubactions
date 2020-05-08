@@ -16,6 +16,9 @@ jobs:
     - name: Build with dotnet
       run: dotnet build ConsoleApp1/ConsoleApp1.sln
     
+    - name: Get All Changed Files
+      uses: jitterbit/get-changed-files@v1
+
     - name: Run InferSharp
       id: infersharp
       uses: ./
