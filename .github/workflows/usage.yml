@@ -17,14 +17,14 @@ jobs:
       run: dotnet build ConsoleApp1/ConsoleApp1.sln
     
     - name: Get All Changed Files
-      uses: jitterbit/get-changed-files@v1
-      run: echo ::set-output name=changedFiles::${{ steps.files.outputs.all }}
+      id: files
+      uses: jitterbit/get-changed-files@v1      
 
     - name: Run InferSharp
       id: infersharp
       uses: ./
       with:
         binary-path: 'ConsoleApp1/ConsoleApp1/bin'
-        pr-changed-files: ${{ changedFiles }}
+        pr-changed-files: ${{ steps.files.outputs.all }}
     - name: InferSharp analysis results
       run: echo "${{ steps.infersharp.outputs.results }}"
