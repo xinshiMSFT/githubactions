@@ -2,7 +2,7 @@
 {
     public class Program
     {
-        static void Main(string[] arg)
+        static void Main(string[] args)
         {
             var returnNull = ReturnNull();
             _ = returnNull.Value;
