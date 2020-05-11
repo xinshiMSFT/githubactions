@@ -1,4 +1,4 @@
-FROM xinshi/githubactions:latest
+FROM xinshi/csharpcodeanalyzer:latest
 
 COPY entrypoint.sh /entrypoint.sh
 
