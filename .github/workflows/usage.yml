@@ -20,11 +20,11 @@ jobs:
       id: files
       uses: jitterbit/get-changed-files@v1      
 
-    - name: Run InferSharp
-      id: infersharp
-      uses: ./
+    - name: Run C# Code Analyzer      
+      uses: microsoft/CSharpCodeAnalyzer@v0.1-beta
+      id: runcsharpcodeanalyzer
       with:
         binary-path: 'ConsoleApp1/ConsoleApp1/bin'
-        pr-changed-files: ${{ steps.files.outputs.all }}
-    - name: InferSharp analysis results
-      run: echo "${{ steps.infersharp.outputs.results }}"
+        repository: ${{ github.repository }}
+    - name: C# Code Analyzer analysis results
+      run: echo "${{ steps.runcsharpcodeanalyzer.outputs.results }}"
