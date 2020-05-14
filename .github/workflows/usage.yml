@@ -16,10 +16,9 @@ jobs:
     - name: Build with dotnet
       run: dotnet build ConsoleApp1/ConsoleApp1.sln
     
-    - name: Run InferSharp
-      id: infersharp
-      uses: ./
+    - uses: microsoft/CSharpCodeAnalyzer@v0.1-beta
       with:
         binary-path: 'ConsoleApp1/ConsoleApp1/bin'
-    - name: InferSharp analysis results
-      run: echo "${{ steps.infersharp.outputs.results }}"
+        repository: ${{ github.repository }}
+    - name: C# Code Analyzer analysis results
+      run: echo "${{ steps.runcsharpcodeanalyzer.outputs.results }}"
