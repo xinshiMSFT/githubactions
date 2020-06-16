@@ -15,3 +15,12 @@ jobs:
         dotnet-version: 2.2.108
     - name: Build with dotnet
       run: dotnet build ConsoleApp1/ConsoleApp1.sln
+      
+    - name: Run C# Code Analyzer
+      uses: microsoft/CSharpCodeAnalyzer@v0.1-beta
+      id: runcsharpcodeanalyzer
+      with:
+        binary-path: 'ConsoleApp1/ConsoleApp1/bin'
+        repository: ${{ github.repository }}
+    - name: C# Code Analyzer analysis results
+      run: echo "${{ steps.runcsharpcodeanalyzer.outputs.results }}"
