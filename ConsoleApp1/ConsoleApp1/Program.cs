@@ -18,11 +18,17 @@ namespace ConsoleApp1
             return null;
         }
 
-        public void ResourceLeakExample()
+	    public StreamWriter AllocateStreamWriter() 
         {
-            StreamReader reader = new StreamReader("");
+            FileStream fs = File.Create("everwhat.txt");
+            return new StreamWriter(fs);
         }
 
+        public void ResourceLeakBad() {
+            StreamWriter stream = AllocateStreamWriter();
+            // FIXME: should close the stream by calling stream.Close() if stream is not null.
+        }
+        
         public void WriteToField(int input)
         {
             lock (__lockObj)
