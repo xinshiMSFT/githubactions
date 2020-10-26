@@ -20,7 +20,10 @@ namespace ConsoleApp1
 
         public void ResourceLeakExample()
         {
-            StreamReader reader = new StreamReader("");
+            FileStream fs = File.Create("everwhat.txt");
+            byte[] info = new UTF8Encoding(true).GetBytes("This is some text in the file.");
+            fs.Write(info, 0, info.Length);
+            return new StreamWriter(fs);
         }
 
         public void WriteToField(int input)
