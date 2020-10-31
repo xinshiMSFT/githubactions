@@ -38,7 +38,6 @@ namespace ConsoleApp1
         {
             return intField;
         }
-
     }
 
 
