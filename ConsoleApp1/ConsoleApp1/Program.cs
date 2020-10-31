@@ -24,10 +24,7 @@ namespace ConsoleApp1
             return new StreamWriter(fs);
         }
 
-        public void ResourceLeakBad() {
-            StreamWriter stream = AllocateStreamWriter();
-            // FIXME: should close the stream by calling stream.Close() if stream is not null.
-        }
+
         
         public void WriteToField(int input)
         {
