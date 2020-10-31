@@ -4,8 +4,6 @@ namespace ConsoleApp1
 {
     public class Program
     {
-        public int intField;
-        private readonly object __lockObj = new object();
 
         static void Main(string[] args)
         {
@@ -14,18 +12,20 @@ namespace ConsoleApp1
         }
 
         private static NullObj ReturnNull()
-        {            
+        {
             return null;
         }
 
-	    public StreamWriter AllocateStreamWriter() 
+        public StreamWriter AllocateStreamWriter()
         {
             FileStream fs = File.Create("everwhat.txt");
             return new StreamWriter(fs);
         }
 
-
-        
+    public class RaceCondition 
+    {
+        private readonly object __lockObj = new object();
+        public int intField;
         public void WriteToField(int input)
         {
             lock (__lockObj)
@@ -38,7 +38,9 @@ namespace ConsoleApp1
         {
             return intField;
         }
+
     }
+
 
     internal class NullObj
     {
