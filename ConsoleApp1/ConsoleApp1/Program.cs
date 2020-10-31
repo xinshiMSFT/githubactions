@@ -18,11 +18,14 @@ namespace ConsoleApp1
             return null;
         }
 
-        public void ResourceLeakExample()
+	    public StreamWriter AllocateStreamWriter() 
         {
-            StreamReader reader = new StreamReader("");
+            FileStream fs = File.Create("everwhat.txt");
+            return new StreamWriter(fs);
         }
 
+
+        
         public void WriteToField(int input)
         {
             lock (__lockObj)
