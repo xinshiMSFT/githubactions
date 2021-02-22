@@ -13,6 +13,8 @@ steps:
 
 - script: |
     curl -o run_infersharp.sh https://raw.githubusercontent.com/microsoft/infersharp/main/run_infersharp.sh
+    chmod +x run_infersharp.sh
+    ls -l run_infersharp.sh
     cat run_infersharp.sh
     ./run_infersharp.sh $(Build.SourcesDirectory)/ConsoleApp1/ConsoleApp1/bin/Debug output
   displayName: 'Run Infer# analysis'
