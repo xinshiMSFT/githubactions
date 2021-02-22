@@ -12,6 +12,7 @@ steps:
     projects: ConsoleApp1/ConsoleApp1.sln
 
 - script: |
+    curl -o run_infersharp.sh https://github.com/microsoft/infersharp/blob/main/run_infersharp.sh
     sh run_infersharp.sh $(Build.SourcesDirectory)/ConsoleApp1/ConsoleApp1/bin/Debug output
   displayName: 'Run Infer# analysis'
 
