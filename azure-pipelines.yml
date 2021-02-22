@@ -12,7 +12,7 @@ steps:
     projects: ConsoleApp1/ConsoleApp1.sln
 
 - script: |
-    curl -o run_infersharp.sh https://github.com/microsoft/infersharp/blob/xinshi/fixazurepipelinesscript/run_infersharp.sh
+    curl -o run_infersharp.sh https://raw.githubusercontent.com/microsoft/infersharp/main/run_infersharp.sh
     cat run_infersharp.sh
     ./run_infersharp.sh $(Build.SourcesDirectory)/ConsoleApp1/ConsoleApp1/bin/Debug output
   displayName: 'Run Infer# analysis'
