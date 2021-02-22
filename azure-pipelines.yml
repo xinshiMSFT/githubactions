@@ -13,7 +13,8 @@ steps:
 
 - script: |
     curl -o run_infersharp.sh https://github.com/microsoft/infersharp/blob/xinshi/fixazurepipelinesscript/run_infersharp.sh
-    sh run_infersharp.sh $(Build.SourcesDirectory)/ConsoleApp1/ConsoleApp1/bin/Debug output
+    cat run_infersharp.sh
+    ./run_infersharp.sh $(Build.SourcesDirectory)/ConsoleApp1/ConsoleApp1/bin/Debug output
   displayName: 'Run Infer# analysis'
 
 - script: cat $(Build.SourcesDirectory)/infer-out/filtered_bugs.txt
