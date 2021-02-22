@@ -52,7 +52,7 @@ jobs:
       downloadPath: '$(System.ArtifactsDirectory)'
 
   - script: |
-      sh run_infersharp.sh $(System.ArtifactsDirectory) output
+      sudo sh run_infersharp.sh $(System.ArtifactsDirectory) output
     displayName: 'Run Infer# analysis'
     target: infersharpcontainer 
 
