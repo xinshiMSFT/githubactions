@@ -1,5 +1,10 @@
 name: "InferSharp-AzurePipelinesExample-Multistage"
 
+resources:
+  containers:
+  - container: infersharpcontainer
+    image: mcr.microsoft.com/infersharp:latest
+
 jobs:
 # Example of existing build pipeline
 - job: RunExistingBuildPipeline
@@ -34,7 +39,7 @@ jobs:
   dependsOn: 'RunExistingBuildPipeline'
   pool:
     vmImage: 'ubuntu-20.04'
-  container: mcr.microsoft.com/infersharp:latest
+  container: infersharpcontainer
 
   steps:
   # Download binaries
@@ -47,7 +52,7 @@ jobs:
       downloadPath: '$(System.ArtifactsDirectory)'
 
   - script:
-    target: mcr.microsoft.com/infersharp:latest
+    target: infersharpcontainer
       sh run_infersharp.sh $(System.ArtifactsDirectory) output
     displayName: 'Run Infer# analysis'
   - script: cat $(Build.SourcesDirectory)/infer-out/filtered_bugs.txt
