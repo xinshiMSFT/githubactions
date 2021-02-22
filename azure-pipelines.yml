@@ -47,7 +47,8 @@ jobs:
       artifactName: 'inferinput'
       downloadPath: '$(System.ArtifactsDirectory)'
 
-  - script: |
+  - script:
+    target: mcr.microsoft.com/infersharp:latest |
       sh run_infersharp.sh $(System.ArtifactsDirectory) output
     displayName: 'Run Infer# analysis'
   - script: cat $(Build.SourcesDirectory)/infer-out/filtered_bugs.txt
