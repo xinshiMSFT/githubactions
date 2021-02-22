@@ -4,7 +4,7 @@ resources:
   containers:
   - container: infersharpcontainer
     image: mcr.microsoft.com/infersharp:latest
-
+    
 jobs:
 # Example of existing build pipeline
 - job: RunExistingBuildPipeline
@@ -51,9 +51,10 @@ jobs:
       artifactName: 'inferinput'
       downloadPath: '$(System.ArtifactsDirectory)'
 
-  - script:
-    target: infersharpcontainer
+  - script: |
       sh run_infersharp.sh $(System.ArtifactsDirectory) output
     displayName: 'Run Infer# analysis'
+    target: infersharpcontainer 
+
   - script: cat $(Build.SourcesDirectory)/infer-out/filtered_bugs.txt
     displayName: 'Infer# analysis result'
