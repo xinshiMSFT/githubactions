@@ -50,7 +50,7 @@ jobs:
   - script: |
       curl -o run_infersharp.sh https://raw.githubusercontent.com/microsoft/infersharp/main/run_infersharp.sh
       chmod +x run_infersharp.sh
-      ./run_infersharp.sh $(System.ArtifactsDirectory) output
+      sh run_infersharp.sh $(System.ArtifactsDirectory) output
     displayName: 'Run Infer# analysis'
   - script: cat $(Build.SourcesDirectory)/infer-out/filtered_bugs.txt
     displayName: 'Infer# analysis result'
