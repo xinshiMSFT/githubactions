@@ -35,7 +35,7 @@ jobs:
   pool:
     vmImage: 'ubuntu-20.04'
   container:
-    image: mcr.microsoft.com/infersharp:v1.0
+    image: mcr.microsoft.com/infersharp:v1.1
 
   steps:
   # Download binaries
