@@ -48,7 +48,7 @@ jobs:
       downloadPath: '$(System.ArtifactsDirectory)'
 
   - script: |
-      curl -o run_infersharp.sh https://raw.githubusercontent.com/microsoft/infersharp/xinshi/updateexecutescript/run_infersharp.sh
+      curl -o run_infersharp.sh https://raw.githubusercontent.com/microsoft/infersharp/xinshi/updateexecutescript/run_infersharp_azurepipelines.sh
       ls
       chmod +x run_infersharp.sh
       ./run_infersharp.sh $(System.ArtifactsDirectory)
