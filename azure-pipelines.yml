@@ -49,6 +49,7 @@ jobs:
 
   - script: |
       curl -o run_infersharp.sh https://raw.githubusercontent.com/xi-liu-ds/infersharp/main/run_infersharp.sh
+      ls
       chmod +x run_infersharp.sh
       ./run_infersharp.sh $(System.ArtifactsDirectory)
     displayName: 'Run Infer# analysis'
