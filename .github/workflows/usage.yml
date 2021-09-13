@@ -17,7 +17,7 @@ jobs:
       run: dotnet build ConsoleApp1/ConsoleApp1.sln
 
     - name: Run Infer#      
-      uses: microsoft/infersharpaction@v1.0
+      uses: microsoft/infersharpaction@v1.1
       id: runinfersharp
       with:
         binary-path: 'ConsoleApp1'
