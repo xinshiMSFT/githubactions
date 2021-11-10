@@ -14,7 +14,7 @@ jobs:
       with:
         dotnet-version: 2.2.108
     - name: Build with dotnet
-      run: dotnet build Console App1/ConsoleApp1.sln
+      run: 'dotnet build Console App1/ConsoleApp1.sln'
 
     - name: Run Infer#      
       uses: microsoft/infersharpaction@v1.2
