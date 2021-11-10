@@ -19,4 +19,4 @@ jobs:
     - name: Run Infer#      
       uses: microsoft/infersharpaction@v1.2
       with:
-        binary-path: '\"Console App1\"'
+        binary-path: '\"Console\ App1\"'
