@@ -24,6 +24,9 @@ jobs:
 
     - name: Infer# analysis results
       run: echo "${{ steps.runinfersharp.outputs.results }}"
+    
+    - name: Infer# analysis results output
+      run: cat infer-out/report.txt
 
     - name: Upload Infer# report as an artifact
       uses: actions/upload-artifact@v2
