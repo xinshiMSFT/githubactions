@@ -20,7 +20,7 @@ jobs:
       id: runinfersharp
       uses: microsoft/infersharpaction@v1.3.1
       with:
-        binary-path: ConsoleApp1
+        binary-path: .github/workflows
         optional-flags: '--enable-null-dereference --fail-on-issue'
 
     - name: Infer# analysis results
