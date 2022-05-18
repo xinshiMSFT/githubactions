@@ -21,6 +21,7 @@ jobs:
       uses: microsoft/infersharpaction@v1.3.1
       with:
         binary-path: ConsoleApp1
+        optional-flags: '--enable-null-dereference --fail-on-issue'
 
     - name: Infer# analysis results
       run: echo "${{ steps.runinfersharp.outputs.results }}"
