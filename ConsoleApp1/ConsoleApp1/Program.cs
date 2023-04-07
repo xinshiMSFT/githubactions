@@ -11,6 +11,9 @@ namespace ConsoleApp1
         {
             var returnNull = ReturnNull();
             _ = returnNull.Value;
+            
+            var returnNull2 = ReturnNull();
+            var result = returnNull2.Value;
         }
 
         private static NullObj ReturnNull()
