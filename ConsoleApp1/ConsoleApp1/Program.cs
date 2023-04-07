@@ -22,6 +22,11 @@ namespace ConsoleApp1
         {
             StreamReader reader = new StreamReader("");
         }
+        
+        public void ResourceLeakExample2()
+        {
+            StreamReader reader = new StreamReader("");
+        }
 
         public void WriteToField(int input)
         {
