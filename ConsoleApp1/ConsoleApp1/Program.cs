@@ -11,9 +11,6 @@ namespace ConsoleApp1
         {
             var returnNull = ReturnNull();
             _ = returnNull.Value;
-            
-            var returnNull2 = ReturnNull();
-            var result = returnNull2.Value;
         }
 
         private static NullObj ReturnNull()
@@ -22,6 +19,11 @@ namespace ConsoleApp1
         }
 
         public void ResourceLeakExample()
+        {
+            StreamReader reader = new StreamReader("");
+        }
+        
+        public void ResourceLeakExample2()
         {
             StreamReader reader = new StreamReader("");
         }
